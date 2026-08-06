@@ -1,0 +1,66 @@
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, Consolas, monospace;
+
+  --text-caption: 11px;
+  --text-footnote: 12px;
+  --text-subheadline: 13px;
+  --text-body: 14px;
+  --text-title3: 20px;
+  --text-title2: 22px;
+
+  --text: #4a5560;
+  --text-h: #152028;
+  --text-muted: #6b7785;
+  --bg: #e8ebe8;
+  --panel-bg: #f7f8f6;
+  --surface: #ffffff;
+  --border: #d0d5d2;
+  --accent: #2d5a4a;
+  --accent-hover: #234839;
+  --ok-bg: #e8f2ed;
+  --ok-border: #a8c9b8;
+
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.45;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #a8b0b8;
+    --text-h: #f0f2f4;
+    --text-muted: #8a949e;
+    --bg: #12161a;
+    --panel-bg: #1a2026;
+    --surface: #232a31;
+    --border: #333b44;
+    --accent: #4a8f75;
+    --accent-hover: #5aa185;
+    --ok-bg: #1c2e26;
+    --ok-border: #3d6b56;
+  }
+}

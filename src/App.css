@@ -1,0 +1,228 @@
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 1.75rem;
+  background: var(--panel-bg);
+  border-right: 1px solid var(--border);
+}
+
+.panel__header h1 {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-title2);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--text-h);
+}
+
+.panel__header p {
+  margin: 0;
+  color: var(--text);
+  font-size: var(--text-body);
+  line-height: 1.45;
+}
+
+.panel__printer h2 {
+  margin: 0 0 0.5rem;
+  font-size: var(--text-caption);
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.panel__status {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--text-subheadline);
+  line-height: 1.4;
+}
+
+.panel__status--ok {
+  border-color: var(--ok-border);
+  background: var(--ok-bg);
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.panel__label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: var(--text-caption);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  font: inherit;
+  font-size: var(--text-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-h);
+}
+
+.btn--ghost:hover {
+  background: var(--surface);
+}
+
+.panel__hint {
+  margin: auto 0 0;
+  font-size: var(--text-footnote);
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2.5rem 1.5rem;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(45, 90, 74, 0.08), transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(30, 40, 50, 0.06), transparent 45%),
+    var(--bg);
+}
+
+.preview__caption {
+  margin: 0;
+  font-size: var(--text-caption);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(20, 24, 28, 0.45);
+}
+
+.modal__card {
+  width: min(100%, 380px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.modal__card h2 {
+  margin: 0 0 0.5rem;
+  font-size: var(--text-title3);
+  color: var(--text-h);
+}
+
+.modal__card > p {
+  margin: 0 0 1rem;
+  font-size: var(--text-subheadline);
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+  font-size: var(--text-footnote);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.modal__field input {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  font-size: var(--text-body);
+  font-weight: 500;
+  color: var(--text-h);
+  background: var(--surface);
+}
+
+.modal__field input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 720px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .panel__hint {
+    margin-top: 0;
+  }
+}
+
+@media print {
+  .app,
+  .preview {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+  }
+}
